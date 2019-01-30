@@ -10,6 +10,14 @@ function component() {
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
     console.log(imgs[i]);
+    var width = imgs[i].naturalWidth;
+    var height = imgs[i].naturalHeight;
+
+    const code = jsQR(imageData, width, height, options);
+    if (code) {
+      console.log("Found QR code", code);
+    }
+
   }
 
   return element;
