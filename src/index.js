@@ -13,7 +13,7 @@ function component() {
     var width = imgs[i].naturalWidth;
     var height = imgs[i].naturalHeight;
 
-    const code = jsQR(imageData, width, height, options);
+    const code = jsQR(imageData, width, height);
     if (code) {
       console.log("Found QR code", code);
     }
