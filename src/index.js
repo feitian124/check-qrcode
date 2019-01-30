@@ -1,5 +1,6 @@
 import jsQR from "jsqr";
-import _ from 'lodash'
+import _ from 'lodash';
+import image from 'get-image-data';
 
 function component() {
   var element = document.createElement('div');
@@ -13,10 +14,16 @@ function component() {
     var width = imgs[i].naturalWidth;
     var height = imgs[i].naturalHeight;
 
-    const code = jsQR(imageData, width, height);
-    if (code) {
-      console.log("Found QR code", code);
-    }
+    image(imgs[i].src, function(error, info) {
+      var height = info.height
+      var width = info.width
+      var imageData = info.data
+
+      const code = jsQR(imageData, width, height);
+      if (code) {
+        console.log("Found QR code", code);
+      }
+    })
 
   }
 
