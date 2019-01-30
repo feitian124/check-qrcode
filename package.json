@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "get-image-data": "^3.0.1",
+    "image-pixels": "^2.2.2",
     "jsqr": "^1.1.1"
   }
 }

@@ -1,22 +1,18 @@
 import jsQR from "jsqr";
-import image from 'get-image-data';
+import pixels from 'image-pixels';
 
-function check() {
+async function check() {
 
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
 
-    image(imgs[i].src, function(error, info) {
-      const height = info.height
-      const width = info.width
-      const imageData = info.data
+    var {data, width, height} = await pixels(imgs[i].src);
 
-      const code = jsQR(imageData, width, height);
+    const code = jsQR(data, width, height);
 
-      if (code) {
-        console.log("Found QR code, value is: ", code.data);
-      }
-    })
+    if (code) {
+      console.log(imgs[i], " Found QR code, value is: ", code.data);
+    }
 
   }
 
