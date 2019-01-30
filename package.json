@@ -20,8 +20,6 @@
   },
   "dependencies": {
     "get-image-data": "^3.0.1",
-    "images": "^3.0.2",
-    "jsqr": "^1.1.1",
-    "lodash": "^4.17.11"
+    "jsqr": "^1.1.1"
   }
 }
