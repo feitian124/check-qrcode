@@ -1,19 +1,15 @@
 import jsQR from "jsqr";
-import _ from 'lodash';
 import image from 'get-image-data';
 
-function component() {
-  var element = document.createElement('div');
-
-  element.innerHTML = _.join(['check', 'qrcode'], ' ');
+function check() {
 
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
 
     image(imgs[i].src, function(error, info) {
-      var height = info.height
-      var width = info.width
-      var imageData = info.data
+      const height = info.height
+      const width = info.width
+      const imageData = info.data
 
       const code = jsQR(imageData, width, height);
 
@@ -24,7 +20,6 @@ function component() {
 
   }
 
-  return element;
 }
-  
-document.body.appendChild(component());
+
+check();
