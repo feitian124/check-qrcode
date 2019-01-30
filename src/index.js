@@ -3,7 +3,6 @@ import image from 'get-image-data';
 
 function check() {
 
-  cosnole.error('I get called from print.js!');
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
 
