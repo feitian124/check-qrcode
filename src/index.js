@@ -12,6 +12,7 @@ async function check() {
 
     if (code) {
       console.log(imgs[i], " Found QR code, value is: ", code.data);
+      imgs[i].src = '/static/forbidden.jpg';
     }
 
   }
