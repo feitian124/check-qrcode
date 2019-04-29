@@ -10,7 +10,7 @@ async function check() {
       const code = jsQR(data, width, height);
       if (code) {
         console.log(imgs[i], " Found QR code, value is: ", code.data);
-        imgs[i].src = 'http://iph.href.lu/' + width + 'x'+ height +'?text=禁';
+        imgs[i].src = '/static/forbidden.jpg';
       }
     } catch (error) {
       console.error('get image data error:', imgs[i].src)
