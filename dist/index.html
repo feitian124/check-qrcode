@@ -4,27 +4,36 @@
    <title>起步</title>
  </head>
  <body>
+   <input type="button" value="点击我加载图片" onclick="loadImg()"/>
    <table>
      <tr>
        <td><img width="200" height="200" src="/static/not1.jpg"></td>
        <td><img width="200" height="200" src="/static/not2.jpg"></td>
-       <td><img width="200" height="200" src="/static/qr1.png"></td>
+       <td><img width="200" height="200" src="/static/qr1.jpg"></td>
        <td><img width="200" height="200" src="/static/not3.jpg"></td>
      </tr>
      <tr>
         <td><img width="200" height="200" src="/static/not4.jpg"></td>
-        <td><img width="200" height="200" src="/static/qr2.gif"></td>
+        <td><img width="200" height="200" src="/static/qr2.jpg"></td>
         <td><img width="200" height="200" src="/static/not5.jpg"></td>
         <td><img width="200" height="200" src="/static/not6.jpg"></td>
       </tr>
       <tr>
-        <td><img width="200" height="200" src="/static/caoliao1.png"></td>
+        <td><img width="200" height="200" src="/static/caoliao1.jpg"></td>
         <td><img width="200" height="200" src="/static/not8.jpg"></td>
         <td><img width="200" height="200" src="/static/not9.jpg"></td>
-        <td><img width="200" height="200" src="/static/qr3.gif"></td>
+        <td><img width="200" height="200" src="/static/qr3.jpg"></td>
       </tr>
-      
    </table>
     <script src="bundle.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.js"></script>
+    <script type="text/javascript">
+      function loadImg() {
+        var index = Math.floor((Math.random()*4));
+        var urls = ['caoliao1', 'not8', 'not9','qr3'];
+        console.log(urls[index]);
+        $("body").append('<img width="200" height="200" src="/static/' + urls[index] +'.jpg">');
+      }
+      </script>
  </body>
 </html>
