@@ -4,7 +4,10 @@
    <title>起步</title>
  </head>
  <body>
-    <div><input type="button" value="点击我加载图片" onclick="loadImg()"/></div>
+    <div>
+      <input type="button" value="点击我加载图片" onclick="loadImg()"/>
+      <input type="button" value="ajax" onclick="myAjax()"/>
+    </div>
 
     <img width="200" height="200" src="/static/not1.jpg">
     <img width="200" height="200" src="/static/not2.jpg">
@@ -29,6 +32,15 @@
         var urls = ['caoliao1', 'not8', 'not9','qr3'];
         console.log(urls[index]);
         $("body").append('<img width="200" height="200" src="/static/' + urls[index] +'.jpg">');
+      }
+      function myAjax() {
+        $.ajax({
+          url: "localhost:8080",
+          context: 'hello',
+          success: function(){
+            console.log('myAjax ok');
+          }
+        });
       }
       </script>
  </body>
