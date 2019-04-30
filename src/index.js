@@ -5,6 +5,7 @@ import pixels from 'image-pixels';
  * 检测页面中的图片是否有二维码
  */
 async function check() {
+  console.log('check qr works...')
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
     try {
