@@ -5,7 +5,7 @@
 	"version": "1.0",
 	"content_scripts": [{
 		"matches": ["<all_urls>"],
-		"js": ["dist/bundle.js"],
+		"js": ["bundle.js"],
 		"run_at": "document_start"
 	}],
 "web_accessible_resources": [
