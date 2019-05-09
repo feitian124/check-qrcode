@@ -5,7 +5,6 @@ import pixels from 'image-pixels';
  * 检测页面中的图片是否有二维码
  */
 async function check() {
-  console.log('check qr works...')
   var imgs = document.getElementsByTagName("img");
   for (var i=0, len=imgs.length; i<len; i++) {
     try {
@@ -13,7 +12,7 @@ async function check() {
       const code = jsQR(data, width, height);
       if (code) {
         console.log(imgs[i], " Found QR code, value is: ", code.data);
-        imgs[i].src = '/static/forbidden.jpg';
+        imgs[i].src="http://yboa.cs.hnyongxiong.com/resources/img/clearfail.png";
       }
     } catch (error) {
       console.error('get image data error:', imgs[i].src)
@@ -54,7 +53,9 @@ function addAjaxListener() {
     if (!a) var a='';
     if (!b) var b='';
     req.tempSend.apply(this, arguments);
-    if(req.method.toLowerCase() == 'post')req.data = a;
+    if(req.method.toLowerCase() == 'post') {
+      req.data = a;
+    }
     req.callback();
   }
 }

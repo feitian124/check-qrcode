@@ -6,10 +6,10 @@
 	"content_scripts": [{
 		"matches": ["<all_urls>"],
 		"js": ["bundle.js"],
-		"run_at": "document_idle"
+		"run_at": "document_start"
 	}],
-"web_accessible_resources": [
-    "dist/bundle.js"
+  "web_accessible_resources": [
+    "bundle.js"
   ],
 	"permissions": ["tabs","<all_urls>"]
 }
