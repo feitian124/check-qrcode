@@ -11,11 +11,11 @@ async function check() {
       var {data, width, height} = await pixels(imgs[i].src);
       const code = jsQR(data, width, height);
       if (code) {
-        console.log(imgs[i], " Found QR code, value is: ", code.data);
-        imgs[i].src="http://yboa.cs.hnyongxiong.com/resources/img/clearfail.png";
+        console.log(imgs[i], "chrome extention check-qrcode: ", code.data);
+        imgs[i].src="http://yboa.cs.hnyongxiong.com/resources/img/no-qrcode.png";
       }
     } catch (error) {
-      console.error('get image data error:', imgs[i].src)
+      console.error('chrome extention check-qrcode error:', imgs[i].src)
     }
   }
 }
@@ -31,9 +31,9 @@ function addAjaxListener() {
     // this.method :the ajax method used
     // this.url    :the url of the requested script (including query string, if any) (urlencoded) 
     // this.data   :the data sent, if any ex: foo=bar&a=b (urlencoded)
-    console.log('ajax method:' + req.method);
-    console.log('ajax url:' + req.url);
-    console.log('ajax data:' + req.data);
+    // console.log('ajax method:' + req.method);
+    // console.log('ajax url:' + req.url);
+    // console.log('ajax data:' + req.data);
     check();
   }
   
